@@ -82,6 +82,9 @@ The Supply Chain Management System is a comprehensive application designed to ma
     python labors.py
     ```
 
+6. **Database**:
+    - Run `supply_chain_management.sql` to get the mysql commands in mysql workbench.
+    
 ## Components and GUI
 
 - The application uses Tkinter for the graphical user interface.
