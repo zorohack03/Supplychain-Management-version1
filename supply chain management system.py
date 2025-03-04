@@ -2,17 +2,20 @@ import tkinter as tk
 import os
 import bcrypt
 import mysql.connector
-import subprocess
+
 def hash_password(password):
-    # Hashes the password using bcrypt
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     return hashed_password
 
 def verify_login(option, username, password):
+    if option == "Labors":
+        os.system("python labour.py")
+        return
+
     conn = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='root',
+        password='MySQL@04',
         database='supply_chain_management'
     )
     cursor = conn.cursor()
@@ -34,12 +37,11 @@ def verify_login(option, username, password):
 
     conn.close()
 
-
 def register_new_user(option, username, password):
     conn = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='root',
+        password='MySQL@04',
         database='supply_chain_management'
     )
     cursor = conn.cursor()
@@ -52,10 +54,7 @@ def register_new_user(option, username, password):
     print(f"Registration successful for {option} with Username: {username}")
     conn.close()
 
-
-
 def open_production_file(role):
-    
     role_file = None
 
     if role == "Purchase Production Manager":
@@ -68,12 +67,15 @@ def open_production_file(role):
         role_file = "labour.py"
 
     if role_file and os.path.exists(role_file):
-        subprocess.Popen(['python', role_file])
+        os.system(f"python {role_file}")
     else:
         print(f"File {role_file} does not exist.")
 
 def select_option(option):
     global username_entry, password_entry
+    if option == "Labors":
+        os.system("python labour.py")
+        return
 
     def back_to_options():
         for widget in root.winfo_children():
