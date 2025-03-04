@@ -108,6 +108,6 @@ Contributions are welcome! Please fork the repository and submit pull requests f
 
 ---
 
-This README provides a comprehensive overview of the Supply Chain Management System, its features, and how to get started with the project. For any further assistance, please refer to the detailed documentation in the code files or contact the project maintainers.
+The README provides a comprehensive overview of the Supply Chain Management System, its features, and how to get started with the project. For any further assistance, please contact the us.
 
 
