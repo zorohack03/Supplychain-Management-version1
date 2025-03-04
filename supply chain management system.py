@@ -15,7 +15,7 @@ def verify_login(option, username, password):
     conn = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='MySQL@04',
+        password='root',
         database='supply_chain_management'
     )
     cursor = conn.cursor()
@@ -41,7 +41,7 @@ def register_new_user(option, username, password):
     conn = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='MySQL@04',
+        password='root',
         database='supply_chain_management'
     )
     cursor = conn.cursor()
